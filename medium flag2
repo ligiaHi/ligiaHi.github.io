@@ -1,0 +1,33 @@
+def casino_royale():
+    print("Welcome to Casino Royale James!")
+    
+    player_name = input("How much money do you want to play today? ")
+    initial_money = int(player_name)  # Convert input to an integer
+    
+    if initial_money != 10000000:
+        print("Sorry we don't play this low.")
+        return
+    
+    current_money = initial_money
+    
+    print("Answer: Great! Let's roll the dice.")
+    
+    dice_roll = 1  # Simulating a dice roll
+    if dice_roll == 1:
+        print("Sorry James, you lost your first hand.")
+        additional_money = input("Do you want to put additional money to try to recover? Answer: ")
+        
+        if additional_money.lower() == "yes":
+            additional_amount = int(input("How much additional money would you like to add? "))
+            
+            who_is_giving = input("Who is giving you the money? Answer: ")
+            if who_is_giving.lower() == "leiter":
+                current_money += additional_amount
+                print("Good news! You recovered all!")
+                print("Here is your code to access your money: 0x6d 0x79 0x6d 0x6f 0x6e 0x65 0x79")
+            else:
+                print("Sorry, that's not the right person to ask for money. You cannot add money.")
+            
+        
+if __name__ == "__main__":
+    casino_royale()
